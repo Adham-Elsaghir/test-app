@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login Example</title>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '362910116656775',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v20.0'
+            });
+            FB.AppEvents.logPageView();   
+        };
+    </script>
+
+    <fb:login-button 
+        scope="public_profile,email,user_posts"
+        onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <script src="script.js"></script>
+</body>
+</html>
